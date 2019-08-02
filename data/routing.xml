@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <modules>
+        <module name="user">
+            <operation name="main">surveyMain.html.php</operation>
+            <operation name="signOff"></operation>
+            <operation name="signIn">signIn.html.php</operation>
+        </module>
+        <module name="survey">
+            <operation name="main">surveyList.html.php</operation>
+            <operation name="create">newSurvey.html.php</operation>
+            <operation name="manage">manageSurvey.html.php</operation>
+        </module>
+    </modules>
+</root>

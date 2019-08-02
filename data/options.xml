@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <options>
+        <option name="AD_SERVER">172.20.1.19</option>
+        <option name="MAIN_DIR">/smp.survey/</option>
+        <option name="MAIN_PAGE">/survey/main/</option>
+        <option name="LOGIN_PAGE">/user/signIn/</option>
+    </options>
+</root>

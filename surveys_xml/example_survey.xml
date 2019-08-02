@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <basic_info>
+        <id></id>
+        <questions_qty></questions_qty>
+    </basic_info>
+    
+    <sections>
+        <section></section>
+        <section></section>
+    </sections>
+    
+    <questions>
+        <question>
+            <type></type>
+            <text></text>
+            <enabled></enabled>
+            <sequence></sequence>
+            <answers>
+                <answer></answer>
+                <answer></answer>
+                <answer></answer>
+            </answers>
+            
+        </question>
+    </questions>
+    
+</root>

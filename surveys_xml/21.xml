@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root><basic_info><id>21</id><questionQty>1</questionQty></basic_info><sections><section>Testowa</section><section>Sekcja 2</section><section>Sekcja 2</section><section>Sekcja 2</section></sections><questions><question><id>1</id><type>1</type><text>Pytanie testowe I</text><section>No Section</section><enabled>0</enabled><sequence>0</sequence><answers><answer>1</answer><answer>6</answer><answer>Inne, jakie?</answer></answers></question></questions></root>

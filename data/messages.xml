@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <messages>
+        <message name="IN_NO_MESSAGE">Komunikat nie został zdefiniowany.</message>
+        
+        <message name="ER_SIGNIN_FAILED">Podano błędne dane logowania.</message>
+        <message name="OK_SIGNIN_OK">Poprawnie zalogowano się do systemu.</message>
+        <message name="OK_SIGNOFF_OK">Poprawnie wylogowano się z systemu.</message>
+        
+        <message name="ER_WRONG_DATA">Podano błędne dane. Spróbuj ponownie.</message>
+        
+        <message name="OK_ADD_DATA">Operacja zakończona pomyślnie.</message>
+        <message name="ER_ADD_DATA">Operacja zakończyła się błędem. Spróbuj ponownie.</message>
+        
+        <message name="OK_SURVEY_ADDED">Ankieta została zapisana. Przejdź do listy ankiet, by nią zarządzać.</message>
+        <message name="ER_SURVEY_NOT_ADDED">Wystąpił błąd podczas zapisu danych. Spróbuj ponownie.</message>
+        <message name="ER_WRONG_SURVEY_ID">Błędny identyfikator ankiety.</message>
+        
+    </messages>
+</root>
