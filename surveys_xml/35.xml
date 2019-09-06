@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<basic_info>
+		<id>0</id>
+		<questionQty>15</questionQty>
+	</basic_info>
+	<sections>
+		<section>Sekcja Pierwsza</section>
+		<section>Sekcja Druga</section>
+		<section>Sekcja Trzecia</section>
+		<section>Sekcja Czwarta</section>
+	</sections>
+	<questions>
+
+		<question>
+			<id>9</id>
+			<type>1</type>
+			<text>Pytanie Numer 1</text>
+			<section>Sekcja Pierwsza</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>0</isCommRequired>
+			<answers>
+				<answer>Odpowiedź A</answer>
+				<answer>Odpowiedź B</answer>
+				<answer>Odpowiedź C</answer>
+			</answers>
+		</question>
+		<question>
+			<id>10</id>
+			<type>2</type>
+			<text>Pytanie Numer 2</text>
+			<section>Sekcja Czwarta</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>0</isCommRequired>
+			<answers>
+				<answer>Odpowiedź A</answer>
+				<answer>Odpowiedź B</answer>
+				<answer>Odpowiedź C</answer>
+				<answer>Odpowiedź D</answer>
+			</answers>
+		</question>
+		<question>
+			<id>11</id>
+			<type>3</type>
+			<text>Pytanie Numer 3</text>
+			<section>Sekcja Trzecia</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>1</isCommRequired>
+			<answers>
+				<answer>1</answer>
+				<answer>10</answer>
+			</answers>
+		</question>
+
+		<question>
+			<id>13</id>
+			<type>4</type>
+			<text>Pytanie Numer 4</text>
+			<section>Sekcja Druga</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>1</isCommRequired>
+			<answers>
+				<answer>Odpowiedź A</answer>
+				<answer>1</answer>
+				<answer>10</answer>
+				<answer>Odpowiedź B</answer>
+				<answer>1</answer>
+				<answer>5</answer>
+				<answer>Odpowiedź C</answer>
+				<answer>1</answer>
+				<answer>15</answer>
+			</answers>
+		</question>
+		<question>
+			<id>14</id>
+			<type>2</type>
+			<text>Pytanie Numer 5</text>
+			<section>Sekcja Czwarta</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>0</isCommRequired>
+			<answers>
+				<answer>Odpowiedź A</answer>
+				<answer>Odpowiedź B</answer>
+			</answers>
+		</question>
+		<question>
+			<id>15</id>
+			<type>5</type>
+			<text>Pytanie Numer 6</text>
+			<section>Sekcja Czwarta</section>
+			<enabled>1</enabled>
+			<sequence>0</sequence>
+			<isRequired>1</isRequired>
+			<isCommRequired>0</isCommRequired>
+			<answers/>
+		</question>
+	</questions>
+</root>

@@ -3,18 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/A:/www/smp.survey/template/manageSurvey.html.php</file>
             <file>file:/A:/www/smp.survey/controller/controller.php</file>
-            <file>file:/A:/www/smp.survey/template/header.html.php</file>
-            <file>file:/A:/www/smp.survey/index.php</file>
-            <file>file:/A:/www/smp.survey/template/userMenu.html.php</file>
+            <file>file:/A:/www/smp.survey/model/modelUser.php</file>
+            <file>file:/A:/www/smp.survey/class/survey.php</file>
+            <file>file:/A:/www/smp.survey/model/modelSurvey.php</file>
+            <file>file:/A:/www/smp.survey/class/user.php</file>
             <file>file:/A:/www/smp.survey/class/registry.php</file>
-            <file>file:/A:/www/smp.survey/class/request.php</file>
-            <file>file:/A:/www/smp.survey/template/newSurvey.html.php</file>
-            <file>file:/A:/www/smp.survey/view/viewSurvey.php</file>
-            <file>file:/A:/www/smp.survey/template/signIn.html.php</file>
-            <file>file:/A:/www/smp.survey/class/object.php</file>
-            <file>file:/A:/www/smp.survey/template/surveyList.html.php</file>
+            <file>file:/A:/www/smp.survey/template/fillSurvey.html.php</file>
         </group>
     </open-files>
 </project-private>

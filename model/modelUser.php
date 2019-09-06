@@ -1,5 +1,5 @@
 <?php
-class ModelUSer extends Model{
+class ModelUser extends Model{
     protected $pdo;
     protected $sql;
 
@@ -12,15 +12,17 @@ class ModelUSer extends Model{
         }
     }
     
-    public function checkAccess($login){
+    public function getPermission($login){
         try{
             $this->sql="
+                select role from tbl_permissions where login=:login
                         ";
-            $query=$this->pdo_mysql->prepare($this->sql);
+            $query=$this->pdo->prepare($this->sql);
             $query->bindParam(':login',$login,PDO::PARAM_STR);
             $query->execute();
-            $count=$query->fetchAll(PDO::FETCH_ASSOC);
-            return $count;
+            $result=$query->fetchAll(PDO::FETCH_ASSOC);
+            if(count($result)>0){return $result[0]['role'];}
+            else{return 0;}
         }catch(Exception $e){
             return -1;	
         }

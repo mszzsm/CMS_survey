@@ -10,6 +10,7 @@
             <operation name="main">surveyList.html.php</operation>
             <operation name="create">newSurvey.html.php</operation>
             <operation name="manage">manageSurvey.html.php</operation>
+            <operation name="fill">fillSurvey.html.php</operation>
         </module>
     </modules>
 </root>

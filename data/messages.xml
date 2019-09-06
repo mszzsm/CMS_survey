@@ -2,6 +2,7 @@
 <root>
     <messages>
         <message name="IN_NO_MESSAGE">Komunikat nie został zdefiniowany.</message>
+        <message name="ER_ACTION_UNDEF">Wystąpiła niezidentyikowana operacja. Czynność przerwana.</message>
         
         <message name="ER_SIGNIN_FAILED">Podano błędne dane logowania.</message>
         <message name="OK_SIGNIN_OK">Poprawnie zalogowano się do systemu.</message>
@@ -15,6 +16,14 @@
         <message name="OK_SURVEY_ADDED">Ankieta została zapisana. Przejdź do listy ankiet, by nią zarządzać.</message>
         <message name="ER_SURVEY_NOT_ADDED">Wystąpił błąd podczas zapisu danych. Spróbuj ponownie.</message>
         <message name="ER_WRONG_SURVEY_ID">Błędny identyfikator ankiety.</message>
+        
+        <message name="ER_FILE_OPEN">Wystąpił błąd podczas otwierania wskazanego pliku.</message>
+        <message name="ER_FILE_EMPTY">Brak danych lub dane niepoprawne.</message>
+        <message name="ER_FILE_READ">Wystąpił błąd podczas otwierania wskazanego pliku.</message>
+        <message name="OK_FILE_READ">Plik został przetworzony poprawnie.</message>
+        
+        
+
         
     </messages>
 </root>

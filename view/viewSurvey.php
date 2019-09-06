@@ -19,10 +19,12 @@ class ViewSurvey extends View{
     public function showListOfSurveys(){
         
         $listOfSurveys = $this->reg->getData('listOfSurveys');
+        $mode = $this->reg->getData('mode');
         
         $title="Lista ankiet";
         $this->setTitle($title);
         $this->set('listOfSurveys',$listOfSurveys);
+        $this->set('mode',$mode);
         $this->render();
         
     }
@@ -40,7 +42,20 @@ class ViewSurvey extends View{
         $surveyDef = $this->reg->getData('surveyDef');
         $surveyDet = $this->reg->getData('surveyDet');
         
-        $title="Ankieta ".$surveyDef[0]['name']." - zarządzanie";
+        $title=$surveyDef[0]['name']." - zarządzanie";
+        $this->setTitle($title);
+        $this->set('surveyDef',$surveyDef);
+        $this->set('surveyDet',$surveyDet);
+        $this->render();
+        
+    }
+    
+    public function fill(){
+        
+        $surveyDef = $this->reg->getData('surveyDef');
+        $surveyDet = $this->reg->getData('surveyDet');
+        
+        $title=$surveyDef[0]['name'];
         $this->setTitle($title);
         $this->set('surveyDef',$surveyDef);
         $this->set('surveyDet',$surveyDet);

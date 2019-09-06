@@ -1,5 +1,3 @@
-body{
-
 /*
 ========================================================
 This pattern is downloaded from www.subtlepatterns.com 
@@ -7,10 +5,52 @@ If you need more, that's where to get'em.
 ========================================================
 */
 
-    background-image: url("img/tlo.png");
-    font-size:16px;
-    font-family: 'Lato', sans-serif;
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  font-size: 18px;
 }
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'm m m . . s'
+    'h h h . . s' 
+    'q q q . . l'
+    'f f f f f f';
+  grid-gap: 10px;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  background-image: url("../img/tlo.png");
+}
+
+
+.header { 
+  grid-area: h; 
+  padding: 1em 1em;
+  border: #9e9e9e59 solid
+  }
+.section { 
+  grid-area: s;
+  padding: 1em 2em;
+  border: #9e9e9e59 solid
+}
+.msg-section {
+  grid-area: m;
+  padding: 1em 1em;
+  border: #9e9e9e59 solid;
+}
+.listOfUser {
+  grid-area: l;
+  padding: 1em;
+  border: #9e9e9e59 solid
+  }
+.question { 
+    grid-area: q; 
+    padding: 1em 1em; 
+    border: #9e9e9e59 solid
+    
+  }
+.footer { grid-area: f; }
 
 h2{
     color: #555;
@@ -19,25 +59,32 @@ h2{
 
 #form-container{
     background-color:white;
-    width:40%;
+    width:70%;
     margin-left:auto;
     margin-right:auto;
     padding:50px;
     margin-top:20vh;
+    margin-bottom: 20vh;
     text-align:center;
     transition:all linear 0.5s;
     border: 2px solid #eeeeee;
 }
 
+.inputs{
+  padding: 50px;
+}
+
+  
+button:focus {
+  outline: none !important;
+  outline:0;
+  }
+
 input[type=password], input[type=text], input[type=date]{
-   
-    background-color:#efefef;
-    color:#666;
-    border:1px solid #dddddd;
-    border-radius:5px;
-    padding:10px;
-    outline: none;
-    text-align:center;
+    background-color:rgb(255, 255, 255);
+    color:rgb(17, 17, 17);
+    text-align: center;
+    margin: 5px;
 }
 
 input[type=password]:focus, input[type=text]:focus, input[type=date]:focus{
@@ -46,17 +93,14 @@ input[type=password]:focus, input[type=text]:focus, input[type=date]:focus{
     color:#2194f3;
 }
 
-input[type=submit]{
-   
+input[type=submit].smp-info{
     background-color:#2194f3;
     opacity:0.75;
     color: white;
-    padding:10px 10px;
     border:none;
     border-radius:5px;
     cursor:pointer;
     letter-spacing:2px;
-    outline: none;
     transition:background-color ease-in-out 0.2s;
     font-family: 'Lato', sans-serif;
 }
@@ -86,6 +130,24 @@ input[type=submit]:hover
     max-width: 80%;
     color:#efefef;
     letter-spacing: 1px;
+    background-color: #6e7c7d9c;
+    border-radius: 5px;
+}
+
+.title-bg{
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: right;
+    position: absolute;
+    top:5px;
+    right:5px;
+    z-index: 2;
+    max-width: 80%;
+    color:black;
+    background-color: black;
+    
+    letter-spacing: 1px;
+   
 }
 
 .title-bg{
@@ -101,6 +163,7 @@ input[type=submit]:hover
     background-color: black;
     opacity: 0.6;
     letter-spacing: 1px;
+    border-radius: 5px;
 }
 
 .date{
@@ -338,7 +401,7 @@ ul ul a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #9e9e9e;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -356,7 +419,7 @@ ul ul a {
 }
 
 input:checked + .slider {
-  background-color: rgb(57, 202, 0);
+  background-color: green;
 }
 
 input:focus + .slider {
@@ -379,3 +442,429 @@ input:checked + .slider:before {
 }
 
 [v-cloak] {display: none}
+
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center;
+    background-color: #0b843bdd;
+    color: #efefef;
+    border: 1px solid #0b843baa;
+    box-shadow: 3px 3px 20px 3px rgba(204,204,204,0.9);
+}
+
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #efefef;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  left: .22em;
+  top:.10em;
+  font-size: 1.2em;
+  line-height: 0.8;
+  color: #0b843b;
+  transition: all .25s;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+label:hover:before {
+  border: 2px solid #0b843bdd!important;
+}
+
+
+/* suwak na dwie wartosci*/
+  [slider] {
+    position: relative;
+    height: 14px;
+    border-radius: 10px;
+    text-align: left;
+    margin: 45px 0 10px 0;
+  }
+  
+  [slider] > div > [inverse-left] {
+    position: absolute;
+    left: 0;
+    height: 14px;
+    border-radius: 10px;
+    background-color: #efefef;
+    margin: 0 7px;
+  }
+
+  [slider] > div > [inverse-right] {
+    position: absolute;
+    right: 0;
+    height: 14px;
+    border-radius: 10px;
+    background-color: #efefef;
+    margin: 0 7px;
+  }
+
+  [slider] > div > [range] {
+    position: absolute;
+    left: 0;
+    height: 14px;
+    background-color: #0b843bdd;
+  }
+  
+  [slider] > div > [thumb] {
+    position: absolute;
+    top: -7px;
+    z-index: 2;
+    height: 28px;
+    width: 28px;
+    text-align: left;
+    margin-left: -11px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    background-color: #fefefe;
+    border-radius: 50%;
+    outline: none;
+  }
+
+  [slider] > input[type=range] {
+    position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    z-index: 3;
+    height: 14px;
+    top: -2px;
+    width: 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+  }
+
+  
+  div[slider] > input[type=range]::-ms-track {
+    -webkit-appearance: none;
+    background: transparent;
+    color: transparent;
+  }
+  
+  div[slider] > input[type=range]::-moz-range-track {
+    -moz-appearance: none;
+    background: transparent;
+    color: transparent;
+  }
+  
+  div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+    background: transparent;
+    border: transparent;
+  }
+  
+  div[slider] > input[type=range]:focus {
+    outline: none;
+  }
+  
+  div[slider] > input[type=range]::-ms-thumb{
+    pointer-events: all;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  div[slider] > input[type=range]::-moz-range-thumb {
+    pointer-events: all;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  div[slider] > input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+  
+  [slider] > div > [sign] {
+    opacity: 1;
+    position: absolute;
+    margin-left: -11px;
+    top: -39px;
+    z-index:3;
+    background-color: #0b843b;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    -webkit-border-radius: 28px;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  [slider] > div > [sign]:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    border-radius: 16px;
+    top: 19px;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top-width: 16px;
+    border-top-style: solid;
+    border-top-color: #0b843b;
+  }
+  
+  [slider] > div > [sign] > span {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+.questiondelete{
+  font-size: 30px;
+  color: #d13f3f
+}
+
+.error{
+  color:#c70d00 !important;
+  border: 1px solid #c70d00 !important;
+  background-color: #c70d0011 !important;
+}
+
+.error:focus{
+  color:#666 !important;
+  border:1px solid #2da65daa !important;
+  background-color: #f8f9fa !important;
+}
+
+.active-block{
+  border-radius: 10px;
+  margin-bottom: 5px;
+  border: solid;
+  background-color: #d5ffd536;
+  border-color: #e5e7e5
+}
+
+.inactive-block{
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: solid;
+    background-color: #ffebeb2b;
+    border-color: #e6e6e6;
+    color: #cfcfcf;
+}
+
+.answer-block{
+    block-size: auto;
+    border-width: thin;
+    border: solid;
+    border-color: darkolivegreen;
+    margin: auto;
+    width: auto;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    align-content: center;
+}
+
+.answer-title{
+    font-size: 16px;
+    color: #7b7b7b;
+    align-content: center;
+    text-align: center;
+    margin-left: 2%;
+    font-weight: 600;
+}
+
+.answer-block > ol > li {
+    border-block-end: solid;
+    border: solid;
+    border-width: thin;
+    border-color: darkgrey;
+    padding: 2px;
+    margin-right: 30%;
+    margin-bottom: 4px;
+}
+
+.description{
+    font-size: 14px;
+    color: grey;
+    margin-left: 10px;
+}
+
+#new-question > div > div > div.modal-body > div > section > div > div > div > span {
+  margin-left: 10px;
+}
+
+.answersSectionTitle{
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: darkslategray;
+    text-align: left;
+}
+
+.imgInactive{ opacity: 0.1 }
+
+.opt { transition: all 0.5s ease; } 
+.opt.deactive { color: grey; transition: all 0.5s ease;       }
+.opt:hover {  color: #90a728cf; transform: rotate(180deg);    }
+.opt.deactive:hover { transform: rotate(-60deg); color: red;  }
+
+.SandenCard { 
+  overflow-y:hidden;
+  width: 50%;
+  height: 30%;
+  transition: all 0.5s ease; 
+}
+
+.SandenCard:hover { 
+  width: 100%;
+  height: 60%;
+  background-color: #90a728cf 
+}
+
+.SandenCardDisable { 
+  overflow-y:hidden;
+  width: 50%;
+  height: 30%;
+  transition: all 0.5s ease; 
+}
+
+.SandenCardDisable:hover { 
+  width: 100%;
+  height: 60%;
+  background-color: grey 
+}
+
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.sectionList{
+    border: solid 1px grey;
+    border-radius: 3px;
+    background-color: #795548;
+    color: aliceblue;
+    font-family: auto;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.addAttachment {
+    border-left: solid 3px grey;
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.show-question{
+  transition: 0.3s ease;
+  opacity: 0.5;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  padding: 1px 2px;
+}
+
+.show-question:hover{
+  opacity: 1;
+}

@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root><basic_info><id>22</id><questionQty>6</questionQty></basic_info>
-<sections><section>TESRT</section><section>Sekcja 2</section><section>Sekcja 2</section><section>Sekcja 2</section><section>Sekcja 2</section><section>Sekcja 2</section><section>sadsad</section><section>sadsad</section><section>sadsad</section></sections>
+<root><basic_info><id>22</id><questionQty>226</questionQty></basic_info>
+<sections><section>Ads</section><section>adasdsad</section><section>adasdsad</section><section>sASas</section><section>sASasAS</section><section>asASasS</section><section>asASasAS</section><section>ASasASa</section><section>asASasAS</section><section>SASasASas</section></sections>
 	<questions>
-		<question>
-			<id>1</id>
-			<type>1</type>
-			<text>Test obowiązkowe Typ 1-2</text>
-			<section>No Section</section>
-			<enabled>1</enabled>
-			<sequence>0</sequence>
-			<isRequired>1</isRequired>
-			<isCommReq>0</isCommReq>
-			<answers><answer/><answer/><answer/></answers>
-		</question>
 		
-		<question>
-			<id>2</id>
-			<type>1</type>
-			<text>Typ 1-2 obowiązkowe</text>
-			<section>No Section</section>
-			<enabled>1</enabled>
-			<sequence>0</sequence>
-			<isRequired>1</isRequired>
-			<isCommReq>0</isCommReq>
-			<answers><answer/><answer/><answer/></answers>
-		</question>
-	<question><id>3</id><type>1</type><text>Pytanie test ID</text><section>No Section</section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>A</answer><answer>B</answer><answer>C</answer></answers></question><question><id>4</id><type>3</type><text>Test zakres całe</text><section>No Section</section><enabled>1</enabled><sequence>0</sequence><isRequired>0</isRequired><isCommReq>1</isCommReq><answers><answer>10</answer><answer>50</answer></answers></question><question><id>5</id><type>1</type><text>Test zakres do odpowiedzi</text><section>No Section</section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer/><answer/><answer/></answers></question><question><id>6</id><type>4</type><text>Test typ 4 zakresy do pytań</text><section>No Section</section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>A</answer><answer>1</answer><answer>6</answer><answer>B</answer><answer>2</answer><answer>9</answer><answer>C</answer><answer>1</answer><answer>10</answer></answers></question></questions>
+	
+	<question><id>212</id><type>4</type><text>Pytanie z zakresem  poszczególne odpowiedzi</text><section>SEkcja TESTOWA</section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>213</id><type>3</type><text>test</text><section>Sekcja 1</section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>0</answer><answer>10</answer></answers></question><question><id>214</id><type>2</type><text>test</text><section>Nowa sekcja </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>215</id><type>3</type><text>1</text><section>Sekcja 1 </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>0</answer><answer>10</answer></answers></question><question><id>216</id><type>3</type><text>1</text><section>Sekcja 1 </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>0</answer><answer>10</answer></answers></question><question><id>217</id><type>3</type><text>TESTA</text><section>Sekcja 1</section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>0</answer><answer>10</answer></answers></question><question><id>218</id><type>2</type><text>1</text><section>Sekcja 1</section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>219</id><type>4</type><text>Trst</text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>220</id><type>4</type><text>Trst</text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>221</id><type>1</type><text>Pytanie </text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer></answers></question><question><id>222</id><type>1</type><text>Pyanie </text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer><answer>dasd</answer><answer>asdasdsad</answer></answers></question><question><id>223</id><type>1</type><text>Pyanie </text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer><answer>dasd</answer><answer>asdasdsad</answer></answers></question><question><id>224</id><type>1</type><text>Pyanie </text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer><answer>dasd</answer><answer>asdasdsad</answer></answers></question><question><id>225</id><type>1</type><text>Pyanie </text><section>Nowa sekcja </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer><answer>dasd</answer><answer>asdasdsad</answer></answers></question><question><id>226</id><type>1</type><text>Pyanie </text><section>Nowa sekcja </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpiwedz 1 </answer><answer>dasd</answer><answer>asdasdsad</answer></answers></question></questions>
 </root>

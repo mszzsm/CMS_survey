@@ -5,12 +5,11 @@ class Registry{
     /*
      * 
      * Uprawnienia użytkownika:
-     * 1 - normalny użytkownik -> tylko wypełnianie i przeglądanie odpowiedzi
-     * 2 - redaktor ankiet -> może tworzyć i edytować swoje ankiety plus
+     * 1 - redaktor ankiet -> może tworzyć i edytować swoje ankiety plus
      *     wypełnianie ankiet
-     * 3 - redaktor naczelny -> może tworzyć i edytować wszystkie ankiety plus
+     * 2 - redaktor naczelny -> może tworzyć i edytować wszystkie ankiety plus
      *     wypełnianie ankiet
-     * 4 - administrator systemu -> pełna opcja
+     * 3 - administrator systemu -> pełna opcja
      * 
      */
     
@@ -19,17 +18,19 @@ class Registry{
     private $post;
     private $get;
     private $session;
+    private $files;
     private $messages;
     private $messageCode = null;
     private $messageType = null;
     private $options;
     private $data = array();
-    private $userPermission = 2; 
+    private $userPermission = 0; 
     
     private function __construct(){
         $this->post = $_POST;$_POST = null;
         $this->get = $_GET;$_GET = null;
         $this->session = $_SESSION;
+        $this->files = $_FILES;
         $this->messages = simplexml_load_file('data/messages.xml');
         $this->options = simplexml_load_file('data/options.xml');
         $this->messageType = $this->getSession('messageType');
@@ -111,6 +112,12 @@ class Registry{
         }else{
             return null;
         }
+        
+    }
+    
+    public function getFiles(){
+        
+        return $this->files;
         
     }
     

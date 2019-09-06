@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root><basic_info><id>20</id><questionQty>0</questionQty></basic_info><sections><section>asdjkhaskhd</section><section>asdjkhaskhd</section></sections><questions/></root>
+<root>
+    <basic_info>
+        <id>20</id>
+        <questionQty>12</questionQty>
+    </basic_info>
+    <sections>
+        <section>asdjkhaskhd</section>
+        <section>asdjkhaskhd</section>
+        <section>Nowa</section>
+    <section>Test X</section><section>Test X</section></sections>
+    <questions>
+        <question>
+            <id>10</id>
+            <type>3</type>
+            <text>Pytanie 1</text>
+            <section>Nowa</section>
+            <enabled>1</enabled>
+            <sequence>0</sequence>
+            <isRequired>1</isRequired>
+            <isCommReq>0</isCommReq>
+            <answers>
+                <answer>6</answer>
+                <answer>10</answer>
+            </answers>
+        </question>
+    <question><id>11</id><type>1</type><text>Pytanie1</text><section>Nowa</section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>Odpdsaasdwiedz 3</answer><answer>dsadasd</answer><answer>dasdasd</answer><answer>dasdasdas</answer></answers></question><question><id>12</id><type>3</type><text>Pytanie X</text><section>asdjkhaskhd</section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>1</answer><answer>10</answer></answers></question></questions>
+</root>

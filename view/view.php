@@ -38,7 +38,6 @@ abstract class View{
     }
     
     protected function menuGenerator(){
-        
         /*
          * 
          * Na podstawie userPermission w Registry, trzeba ułożyć menu główne
@@ -46,7 +45,6 @@ abstract class View{
          * uprawnieniami zalogowanego użytkownika.
          * 
          */
-        
     }
 
     protected function set($name, $value) {

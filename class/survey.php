@@ -1,14 +1,15 @@
 <?php
 
-class Survey extends Object{
+class Survey extends ObjectAction{
     
     private $surveyName = null;
     private $surveyProject = null;
+    private $isProcessing = false;
     
     
     public function __construct(){
         
-        $this->reg = Registry::instance();
+        //$this->reg = Registry::instance();
         parent::__construct(__CLASS__);
         
     }
@@ -31,40 +32,65 @@ class Survey extends Object{
     /*
      * 
      * Uprawnienia użytkownika:
-     * 1 - normalny użytkownik -> tylko wypełnianie i przeglądanie odpowiedzi
-     * 2 - redaktor ankiet -> może tworzyć i edytować swoje ankiety plus
+     * 0 - normalny użytkownik -> tylko wypełnianie i przeglądanie odpowiedzi
+     * 1 - redaktor ankiet -> może tworzyć i edytować swoje ankiety plus
      *     wypełnianie ankiet
-     * 3 - redaktor naczelny -> może tworzyć i edytować wszystkie ankiety plus
+     * 2 - redaktor naczelny -> może tworzyć i edytować wszystkie ankiety plus
      *     wypełnianie ankiet
-     * 4 - administrator systemu -> pełna opcja
+     * 3 - administrator systemu -> pełna opcja
      * 
      */
-     
-        switch($this->reg->getUserPermission()){
+
+        $permission=$this->reg->getUserPermission();
+        switch($permission){
+            case 0:
+                $this->toFillSurveys($permission);
+                break;
+            
             case 1:
-                $this->listOfSurveys();
+                $this->listOfMySurveys($permission);
                 break;
             
             case 2:
-                $this->listOfSurveys();
+                $this->listOfAllSurveys($permission);
                 break;
             
             case 3:
-                $this->listOfSurveys();
-                break;
-            
-            case 4:
-                $this->listOfSurveys();
+                $this->listOfAllSurveys($permission);
                 break;
         }
         
     }
     
     
-    private function listOfSurveys(){
-        
-        $listOfSurveys = $this->getModel()->getListOfSurveys();
+    private function listOfAllSurveys($mode){
+
+        $listOfSurveys = $this->getModel()->getListOfSurveys($mode);
         $this->reg->setData('listOfSurveys',$listOfSurveys);
+        
+        $this->reg->setData('mode','manage');
+        
+        $this->getView()->showListOfSurveys();
+        
+    }
+    
+    private function listOfMySurveys($mode){
+
+        $listOfSurveys = $this->getModel()->getListOfSurveys($mode,$this->reg->getSession('userName'));
+        $this->reg->setData('listOfSurveys',$listOfSurveys);
+        
+        $this->reg->setData('mode','manage');
+        
+        $this->getView()->showListOfSurveys();
+        
+    }
+    
+    private function toFillSurveys($mode){
+        
+        $listOfSurveys = $this->getModel()->getListOfSurveys($mode);
+        $this->reg->setData('listOfSurveys',$listOfSurveys);
+        
+        $this->reg->setData('mode','fill');
         
         $this->getView()->showListOfSurveys();
         
@@ -114,6 +140,34 @@ class Survey extends Object{
         
     }
     
+    public function enableQuestion(){
+        if(isset($this->reg->getRequest()->getParameters()[0]) and is_numeric($this->reg->getRequest()->getParameters()[0]) and 
+           isset($this->reg->getRequest()->getParameters()[1]) and is_numeric($this->reg->getRequest()->getParameters()[1])){
+            if($this->getModel()->enableQuestionA($this->reg->getRequest()->getParameters(0),$this->reg->getRequest()->getParameters(1))){
+                echo 1;
+            }else{
+                echo 0;
+            }
+        }else{
+            echo 0;
+        }
+        exit;
+    }
+    
+    public function disableQuestion(){
+        if(isset($this->reg->getRequest()->getParameters()[0]) and is_numeric($this->reg->getRequest()->getParameters()[0]) and 
+           isset($this->reg->getRequest()->getParameters()[1]) and is_numeric($this->reg->getRequest()->getParameters()[1])){
+            if($this->getModel()->disableQuestionA($this->reg->getRequest()->getParameters(0),$this->reg->getRequest()->getParameters(1))){
+                echo 1;
+            }else{
+                echo 0;
+            }
+        }else{
+            echo 0;
+        }
+        exit;
+    }
+    
     public function manage(){
         
         $surveyId = $this->reg->getRequest()->getParameters(0);
@@ -140,6 +194,7 @@ class Survey extends Object{
         
         if(isset($this->reg->getRequest()->getParameters()[1]) and $this->reg->getRequest()->getParameters(1)=='addQuestion'){
             if(isset($this->reg->getPost()['addQuestionBtn']) and $this->reg->getPost()['questionText']<>''){
+                //var_dump($this->reg->getPost());die();
                 if($this->getModel()->addQuestion()){
                     $this->reg->setMessage("OK_ADD_DATA");
                 }else{
@@ -216,6 +271,14 @@ class Survey extends Object{
             }
         }
         
+        if(isset($this->reg->getRequest()->getParameters()[1]) and $this->reg->getRequest()->getParameters(1)=='addResponders'){
+            if(isset($this->reg->getRequest()->getParameters()[0]) and is_numeric($this->reg->getRequest()->getParameters()[0])){
+                $this->addResponders();
+            }else{
+                $this->reg->setMessage("ER_WRONG_DATA");
+            }
+        }
+        
         $surveyDef = $this->getModel()->getSurveyDefinition($surveyId);
         if(count($surveyDef)==0){
             $this->reg->setMessage("ER_WRONG_SURVEY_ID");
@@ -229,6 +292,90 @@ class Survey extends Object{
         $this->reg->setData('surveyDet',$surveyDet);
         
         $this->getView()->manage();
+        exit;
+    }
+    
+    public function addResponders(){
+        $file = $this->reg->getFiles();
+        
+        if(
+            $file['respondersFile']['error']==0 and 
+            $file['respondersFile']['size']>0 and 
+            $file['respondersFile']['type']=='application/vnd.ms-excel' and
+            substr($file['respondersFile']['name'],-4)=='.csv'
+        ){
+            
+            $respondersList = null;
+            $fileName=$file['respondersFile']['tmp_name'];
+            if (($handle = fopen($fileName, 'r')) !== FALSE) {
+                $i=1;
+                while (($data = fgetcsv($handle, 0, ',')) !== FALSE) {
+                    $temp = explode(';',iconv( mb_detect_encoding($data[0], mb_detect_order(), TRUE), "UTF-8", $data[0]));
+                    
+                    $respondersList[$i]['idSurvey']=$this->reg->getRequest()->getParameters()[0];
+                    
+                    $respondersList[$i]['respondentId']=$temp[0];
+                    array_splice($temp,0,1);
+                    
+                    $respondersList[$i]['respondentName']=mb_convert_case(mb_strtolower($temp[0]),MB_CASE_TITLE);
+                    array_splice($temp,0,1);
+                    
+                    $temp[2]=mb_convert_case(mb_strtolower($temp[2]),MB_CASE_TITLE);
+                    $respondersList[$i]['respondentParam']=json_encode($temp,JSON_UNESCAPED_UNICODE);
+                    
+                    $i++;
+                }
+                fclose($handle);
+                
+                if(count($respondersList)<=0){
+                    $this->reg->setMessage("ER_FILE_EMPTY");
+                    return false;
+                }
+                
+                if($this->getModel()->saveResponders($respondersList)){
+                    $this->reg->setMessage("OK_ADD_DATA");
+                    return true;
+                }else{
+                    $this->reg->setMessage("ER_ADD_DATA");
+                    return false;
+                }
+                
+            }else{
+                $this->reg->setMessage("ER_FILE_OPEN");
+                return false;
+            }
+            
+        }else{
+            $this->reg->setMessage("ER_FILE_EMPTY");
+            return false;
+        }
+        
+        $this->reg->setMessage("ER_ACTION_UNDEF");
+        return false;
+    }
+    
+    public function fill(){
+        $surveyId = $this->reg->getRequest()->getParameters(0);
+        
+        if($surveyId===null){
+            $this->reg->setMessage("ER_WRONG_SURVEY_ID");
+            header("location: ".$this->reg->getOption('MAIN_DIR'));
+            exit;
+        }
+        
+        $surveyDef = $this->getModel()->getSurveyDefinition($surveyId);
+        if(count($surveyDef)==0){
+            $this->reg->setMessage("ER_WRONG_SURVEY_ID");
+            header("location: ".$this->reg->getOption('MAIN_DIR'));
+            exit;
+        }
+        
+        $surveyDet = $this->getModel()->getSurveyDetailsToFill($surveyId);
+        
+        $this->reg->setData('surveyDef',$surveyDef);
+        $this->reg->setData('surveyDet',$surveyDet);
+        
+        $this->getView()->fill();
         exit;
     }
     

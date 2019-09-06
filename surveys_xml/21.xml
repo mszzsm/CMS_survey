@@ -1,2 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root><basic_info><id>21</id><questionQty>1</questionQty></basic_info><sections><section>Testowa</section><section>Sekcja 2</section><section>Sekcja 2</section><section>Sekcja 2</section></sections><questions><question><id>1</id><type>1</type><text>Pytanie testowe I</text><section>No Section</section><enabled>0</enabled><sequence>0</sequence><answers><answer>1</answer><answer>6</answer><answer>Inne, jakie?</answer></answers></question></questions></root>
+<root>
+    <basic_info>
+        <id>21</id>
+        <questionQty>57</questionQty>
+    </basic_info>
+    <sections><section>Sekcja 1 </section><section>asdpas;lkd;alskjd;lkas;lf;lkjfsakjflaksj;lfkajslfkjsalfkjlsajfsa;lkd;lkas;'dka</section><section>sadasdasdsadasdsadsadsadasdsadsad</section><section>12345678901234567890</section><section>sdasddsaasdadsasda</section><section>sdasddsaasdadsasda</section><section>sdasddsaasdadsasda</section></sections>
+    <questions>
+        <question>
+            <id>2</id>
+            <type>1</type>
+            <text>Pytanie1</text>
+            <section>No Section</section>
+            <enabled>0</enabled>
+            <sequence>0</sequence>
+            <isRequired>0</isRequired>
+            <isCommReq>0</isCommReq>
+            <answers>
+                <answer>Odpowiedz 2 </answer>
+                <answer>odpowiedz 2 </answer>
+                <answer>Odpowiedz 3 </answer>
+            </answers>
+        </question>
+      
+       
+        <question>
+            <id>5</id>
+            <type>1</type>
+            <text>Pytanie 1 </text>
+            <section>No Section</section>
+            <enabled>0</enabled>
+            <sequence>0</sequence>
+            <isRequired>0</isRequired>
+            <isCommReq>0</isCommReq>
+            <answers>
+                <answer>Odpiwedz 1 </answer>
+                <answer>Odpiwedz 2</answer>
+                <answer>Odpiwedz 3</answer>
+                <answer>Odpowiedz 5</answer>
+            </answers>
+        </question>
+       
+       
+    <question><id>50</id><type>2</type><text>Pytanie 1 </text><section/><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>51</id><type>2</type><text>Pytanie 1 </text><section>Sekcja 1 </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>52</id><type>2</type><text>Pytanie 1 </text><section>Sekcja 1 </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers/></question><question><id>53</id><type>1</type><text>TEST</text><section>Sekcja 1 </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>TEST</answer><answer>TEST</answer><answer>TETS</answer></answers></question><question><id>54</id><type>1</type><text>TEST</text><section>Sekcja 1 </section><enabled>1</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>TEST</answer><answer>TEST</answer><answer>TETS</answer></answers></question><question><id>55</id><type>1</type><text>TEST</text><section>Sekcja 1 </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>TEST</answer><answer>TEST</answer><answer>TETS</answer></answers></question><question><id>56</id><type>1</type><text>TEST</text><section>Sekcja 1 </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>TEST</answer><answer>TEST</answer><answer>TETS</answer></answers></question><question><id>57</id><type>1</type><text>TEST</text><section>Sekcja 1 </section><enabled>0</enabled><sequence>0</sequence><isRequired>1</isRequired><isCommReq>0</isCommReq><answers><answer>TEST</answer><answer>TEST</answer><answer>TETS</answer></answers></question></questions>
+</root>
